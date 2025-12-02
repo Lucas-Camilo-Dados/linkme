@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="{{.DefaultTheme}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Config.Name}}</title>
+    <meta name="description" content="{{.Config.Description}}">
+
+    {{/* Prevent flash of wrong theme */}}
+    {{if .Theme.Features.DarkMode}}
+    <script>
+    (function(){
+        var t = localStorage.getItem('linkme-theme') || '{{.DefaultTheme}}';
+        document.documentElement.setAttribute('data-theme', t);
+    })();
+    </script>
+    {{end}}
+
+    {{/* Theme stylesheets */}}
+    {{range .ThemeStyles}}
+    <link rel="stylesheet" href="{{.}}">
+    {{end}}
+
+    <style>
+        body {
+            {{.BackgroundCSS}}
+        }
+    </style>
+</head>
+<body>
+    {{/* Theme toggle button */}}
+    {{if .Theme.Features.DarkMode}}
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+    {{end}}
+
+    {{if eq .Config.Background.Type "particles"}}
+    <canvas id="particles"></canvas>
+    {{end}}
+
+    <div class="container">
+        <div class="profile">
+            {{if .Config.Avatar}}
+            <img src="{{.Config.Avatar}}" alt="{{.Config.Name}}" class="avatar">
+            {{end}}
+            <h1 class="name">{{.Config.Name}}</h1>
+            {{if .Config.Subtitle}}
+            <p class="subtitle">{{.Config.Subtitle}}</p>
+            {{end}}
+            {{if .Config.Description}}
+            <p class="description">{{.DescriptionHTML}}</p>
+            {{end}}
+        </div>
+
+        <div class="links">
+            {{range .Links}}
+            <a href="{{.URL}}" class="link-button" style="background-color: {{.Color}};" target="_blank" rel="noopener noreferrer">
+                <span class="link-icon">{{if .IconURL}}<img src="{{.IconURL}}" alt="" class="link-icon-img">{{else}}{{.IconSVG}}{{end}}</span>
+                <span class="link-title">{{.Title}}</span>
+            </a>
+            {{end}}
+        </div>
+
+        {{range .Sections}}
+        <div class="section">
+            <h2 class="section-title">{{.Title}}</h2>
+            <div class="links">
+                {{range .Links}}
+                <a href="{{.URL}}" class="link-button" style="background-color: {{.Color}};" target="_blank" rel="noopener noreferrer">
+                    <span class="link-icon">{{if .IconURL}}<img src="{{.IconURL}}" alt="" class="link-icon-img">{{else}}{{.IconSVG}}{{end}}</span>
+                    <span class="link-title">{{.Title}}</span>
+                </a>
+                {{end}}
+            </div>
+        </div>
+        {{end}}
+
+        {{if .Socials}}
+        <div class="socials">
+            {{range .Socials}}
+            <a href="{{.URL}}" class="social-icon"{{if .Color}} style="color: {{.Color}};"{{end}} target="_blank" rel="noopener noreferrer">
+                {{.IconSVG}}
+            </a>
+            {{end}}
+        </div>
+        {{end}}
+    </div>
+
+    {{/* Theme scripts */}}
+    {{range .ThemeScripts}}
+    <script src="{{.}}"></script>
+    {{end}}
+
+    {{/* Theme toggle logic */}}
+    {{if .Theme.Features.DarkMode}}
+    <script>
+    (function() {
+        var btn = document.getElementById('theme-toggle');
+
+        function getTheme() {
+            return localStorage.getItem('linkme-theme') || '{{.DefaultTheme}}';
+        }
+
+        function setTheme(t) {
+            document.documentElement.setAttribute('data-theme', t);
+            localStorage.setItem('linkme-theme', t);
+        }
+
+        function toggle() {
+            var current = getTheme();
+            var next = current === 'dark' ? 'light' : 'dark';
+            setTheme(next);
+        }
+
+        if (btn) {
+            btn.addEventListener('click', toggle);
+        }
+    })();
+    </script>
+    {{end}}
+
+    {{if eq .Config.Background.Type "particles"}}
+    <script src="particles.js"></script>
+    <script>
+        particlesJS('particles', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out' }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } }
+            }
+        });
+    </script>
+    {{end}}
+</body>
+</html>

@@ -1,0 +1,15 @@
+name: "Default"
+version: "1.0.0"
+author: "linkme"
+description: "Clean, minimal default theme with dark mode support"
+license: "MIT"
+
+features:
+  darkMode: true
+  particles: true
+  animations: false
+
+styles:
+  - "styles.css"
+
+defaultColorScheme: "dark"

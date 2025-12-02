@@ -1,0 +1,19 @@
+name: "PolySleek"
+version: "1.2.0"
+author: "JulianPrieber & Linkstack Team"
+description: "A sleek, modern theme with particle effects and smooth animations"
+license: "MIT"
+
+features:
+  darkMode: true
+  particles: true
+  animations: true
+
+styles:
+  - "styles/base.css"
+  - "styles/animations.css"
+
+scripts:
+  - "scripts/particles.min.js"
+
+defaultColorScheme: "dark"

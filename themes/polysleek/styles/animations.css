@@ -1,0 +1,146 @@
+/* PolySleek Animations
+ * Based on LinkStack's PolySleek theme
+ * License: MIT
+ */
+
+/* Entrance animation - used on page load */
+@keyframes transitionAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pop-up entrance animation for buttons */
+@keyframes popUp {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Background gradient animation */
+@keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
+
+/* Star animation for particles */
+@keyframes animStar {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-2000px);
+    }
+}
+
+/* Button hover effect - scale */
+.button-hover {
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.1s;
+    transition-property: transform;
+}
+
+.button-hover:active,
+.button-hover:focus,
+.button-hover:hover {
+    transform: scale(1.02);
+}
+
+/* Credit/footer hover effect */
+.credit-hover {
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.1s;
+    transition-property: transform;
+}
+
+.credit-hover:active,
+.credit-hover:focus,
+.credit-hover:hover {
+    transform: scale(1.04);
+}
+
+/* Footer lift hover effect */
+.footer-hover {
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+
+.footer-hover:active,
+.footer-hover:focus,
+.footer-hover:hover {
+    transform: translateY(-8px);
+}
+
+/* Staggered entrance for link buttons */
+.link-button:nth-child(1) { animation-delay: 0.1s; }
+.link-button:nth-child(2) { animation-delay: 0.15s; }
+.link-button:nth-child(3) { animation-delay: 0.2s; }
+.link-button:nth-child(4) { animation-delay: 0.25s; }
+.link-button:nth-child(5) { animation-delay: 0.3s; }
+.link-button:nth-child(6) { animation-delay: 0.35s; }
+.link-button:nth-child(7) { animation-delay: 0.4s; }
+.link-button:nth-child(8) { animation-delay: 0.45s; }
+.link-button:nth-child(9) { animation-delay: 0.5s; }
+.link-button:nth-child(10) { animation-delay: 0.55s; }
+
+/* Apply pop-up animation to link buttons */
+.links .link-button {
+    animation: popUp 0.5s ease-out both;
+}
+
+/* Pulse animation for social icons on hover */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(3, 218, 198, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(3, 218, 198, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(3, 218, 198, 0);
+    }
+}
+
+.social-icon:hover {
+    animation: pulse 0.5s ease-out;
+}
+
+/* Glow effect for theme toggle on hover */
+.theme-toggle:hover {
+    box-shadow: 0 0 15px var(--accent-color);
+}

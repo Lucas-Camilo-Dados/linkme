@@ -1,0 +1,80 @@
+configVersion: "1.0"
+
+# Profile
+name: "Alex Kretzschmar"
+subtitle: "Head of DevRel at Tailscale"
+description: |
+  aka @ironicbadger
+  Father. Educator. Tinkerer.
+avatar: "https://ktz.me/images/avatar.jpg"
+
+# Theme selection
+theme: "default"
+
+# Background options
+# type: color | image | gradient | particles
+background:
+  type: "color"
+  value: "#1e1f26"
+
+# Main links (large buttons)
+# icon: Simple Icons slug (see https://simpleicons.org)
+# color: hex color for button background
+links:
+  - title: "YouTube: KTZ Systems"
+    url: "https://www.youtube.com/@ktzsystems"
+    icon: "youtube"
+    color: "#dc2626"
+
+  - title: "YouTube: Tailscale"
+    url: "https://www.youtube.com/@tailscale"
+    iconUrl: "assets/icons/tailscale.png"
+    color: "#242424"
+
+  - title: "GitHub: Ironicbadger"
+    url: "https://github.com/IronicBadger"
+    icon: "github"
+    color: "#0a0a0a"
+
+  - title: "blog.ktz.me"
+    url: "https://blog.ktz.me"
+    icon: "rss"
+    color: "#404040"
+
+  - title: "Perfect Media Server"
+    url: "https://perfectmediaserver.com"
+    iconUrl: "assets/icons/pms.png"
+    color: "#3B82F6"
+
+  - title: "YouTube: Personal Stuff"
+    url: "https://www.youtube.com/@alexkretzschmar"
+    icon: "youtube"
+    color: "#dc2626"
+
+# Sections with headings
+sections:
+  - title: "Past Projects"
+    links:
+      - title: "Self-Hosted Podcast"
+        url: "https://selfhosted.show"
+        iconUrl: "assets/icons/selfhosted.png"
+        color: "#ee7125"
+      - title: "linuxserver.io - Co-founder"
+        url: "https://linuxserver.io"
+        iconUrl: "assets/icons/linuxserver.png"
+        color: "#DA3B8A"
+
+# Social links (small icons)
+socials:
+  - icon: "mastodon"
+    url: "https://techhub.social/@ironicbadger"
+    color: "#6364FF"
+  - icon: "x"
+    url: "https://twitter.com/ironicbadger"
+    color: "#FFFFFF"
+  - icon: "reddit"
+    url: "https://www.reddit.com/user/Ironicbadger"
+    color: "#FF4500"
+  - icon: "linkedin"
+    url: "https://www.linkedin.com/in/alex-kretzschmar/"
+    color: "#0A66C2"
