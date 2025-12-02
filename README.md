@@ -2,6 +2,8 @@
 
 A customizable link page generator built in Go.
 
+![A screenshot of the application.](screenshot.png)
+
 ## Usage
 
 ```bash
