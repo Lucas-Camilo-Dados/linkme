@@ -139,8 +139,3 @@
 .social-icon:hover {
     animation: pulse 0.5s ease-out;
 }
-
-/* Glow effect for theme toggle on hover */
-.theme-toggle:hover {
-    box-shadow: 0 0 15px var(--accent-color);
-}

@@ -27,7 +27,6 @@ type TemplateData struct {
 	Socials         []SocialData
 	BackgroundCSS   template.CSS
 	DescriptionHTML template.HTML
-	DefaultTheme    string   // "light" or "dark"
 	ThemeStyles     []string // CSS files to include
 	ThemeScripts    []string // JS files to include
 }
@@ -118,7 +117,6 @@ func (g *Generator) prepareTemplateData() *TemplateData {
 		Theme:           g.theme,
 		BackgroundCSS:   g.generateBackgroundCSS(),
 		DescriptionHTML: descHTML,
-		DefaultTheme:    g.theme.DefaultColorScheme,
 		ThemeStyles:     g.theme.Styles,
 		ThemeScripts:    g.theme.Scripts,
 	}

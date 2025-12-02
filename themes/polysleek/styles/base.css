@@ -13,13 +13,12 @@
     padding: 0;
 }
 
-/* Dark mode default */
 :root {
     /* Font settings */
     --font-family: 'Roboto', sans-serif;
     --font-size: 16px;
 
-    /* Colors - Dark mode */
+    /* Colors */
     --background-color: #1e1f26;
     --text-color: #fff;
     --text-secondary: #b0b0b0;
@@ -45,19 +44,6 @@
 
     /* Layout */
     --max-width: 600px;
-}
-
-/* Light mode override */
-[data-theme="light"] {
-    --background-color: #f5f5f5;
-    --text-color: #1e1f26;
-    --text-secondary: #666666;
-    --image-border-color: #e0e0e0;
-    --button-background-color: #ffffff;
-    --button-text-color: #1e1f26;
-    --button-text-hover-color: #03dac6;
-    --button-shadow: rgba(0, 0, 0, 0.1);
-    --svg-color: #1e1f26;
 }
 
 /* Selection highlight */
@@ -297,62 +283,6 @@ p {
     fill: currentColor;
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    width: 44px;
-    height: 44px;
-    border: none;
-    border-radius: 50%;
-    background: var(--button-background-color);
-    color: var(--svg-color);
-    font-size: 1.25rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 10px var(--button-shadow);
-}
-
-.theme-toggle:hover {
-    transform: scale(1.1);
-    color: var(--accent-color);
-}
-
-.theme-toggle:focus {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
-}
-
-.theme-toggle svg {
-    width: 24px;
-    height: 24px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-}
-
-/* Hide inactive icon */
-.theme-toggle .icon-sun {
-    display: none;
-}
-
-.theme-toggle .icon-moon {
-    display: block;
-}
-
-[data-theme="light"] .theme-toggle .icon-sun {
-    display: block;
-}
-
-[data-theme="light"] .theme-toggle .icon-moon {
-    display: none;
-}
-
 /* Links styling */
 a {
     color: var(--text-color);
@@ -391,12 +321,5 @@ a:hover {
 
     .profile {
         padding-top: 30px;
-    }
-
-    .theme-toggle {
-        top: 0.5rem;
-        right: 0.5rem;
-        width: 40px;
-        height: 40px;
     }
 }

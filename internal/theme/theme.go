@@ -9,20 +9,18 @@ import (
 
 // ThemeManifest represents a theme's configuration
 type ThemeManifest struct {
-	Name               string        `yaml:"name"`
-	Version            string        `yaml:"version"`
-	Author             string        `yaml:"author"`
-	Description        string        `yaml:"description"`
-	License            string        `yaml:"license"`
-	Features           ThemeFeatures `yaml:"features"`
-	Styles             []string      `yaml:"styles"`
-	Scripts            []string      `yaml:"scripts"`
-	DefaultColorScheme string        `yaml:"defaultColorScheme"` // "light", "dark"
+	Name        string        `yaml:"name"`
+	Version     string        `yaml:"version"`
+	Author      string        `yaml:"author"`
+	Description string        `yaml:"description"`
+	License     string        `yaml:"license"`
+	Features    ThemeFeatures `yaml:"features"`
+	Styles      []string      `yaml:"styles"`
+	Scripts     []string      `yaml:"scripts"`
 }
 
 // ThemeFeatures defines optional theme capabilities
 type ThemeFeatures struct {
-	DarkMode   bool `yaml:"darkMode"`
 	Particles  bool `yaml:"particles"`
 	Animations bool `yaml:"animations"`
 }
@@ -56,10 +54,9 @@ func Load(themePath string) (*ThemeManifest, error) {
 // legacyManifest creates a default manifest for themes without theme.yaml
 func legacyManifest(themePath string) *ThemeManifest {
 	manifest := &ThemeManifest{
-		Name:               filepath.Base(themePath),
-		Version:            "1.0.0",
-		Features:           ThemeFeatures{DarkMode: false}, // Disabled by default for legacy themes
-		DefaultColorScheme: "dark",                         // Preserve current dark-first behavior
+		Name:     filepath.Base(themePath),
+		Version:  "1.0.0",
+		Features: ThemeFeatures{},
 	}
 
 	// Check for legacy styles.css at root level
@@ -77,9 +74,6 @@ func applyDefaults(manifest *ThemeManifest, themePath string) {
 	}
 	if manifest.Version == "" {
 		manifest.Version = "1.0.0"
-	}
-	if manifest.DefaultColorScheme == "" {
-		manifest.DefaultColorScheme = "dark"
 	}
 
 	// If no styles specified, check for common defaults

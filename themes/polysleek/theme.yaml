@@ -5,7 +5,6 @@ description: "A sleek, modern theme with particle effects and smooth animations"
 license: "MIT"
 
 features:
-  darkMode: true
   particles: true
   animations: true
 
@@ -15,5 +14,3 @@ styles:
 
 scripts:
   - "scripts/particles.min.js"
-
-defaultColorScheme: "dark"
